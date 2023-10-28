@@ -21,28 +21,28 @@ client.once('ready', () => {
     console.log(`Logado como ${client.user.tag}!`);
 });
 
-const reddit = new snoowrap({
-    userAgent: '',
-    clientId: '',
-    clientSecret: '',
-    username: '',
-    password: ''
-});
+// const reddit = new snoowrap({
+//     userAgent: '',
+//     clientId: '',
+//     clientSecret: '',
+//     username: '',
+//     password: ''
+// });
 
-const subreddit = '';
+// const subreddit = '';
 
-const num_posts = 3;
+// const num_posts = 3;
 
-reddit.getSubreddit(subreddit).getTop(
-    {limit: num_posts}
-    )
-    .then(posts => {
-        posts.forEach(post => {
-            console.log(post.title);
-        });
-    }).catch(err => {
-        console.log(err);
-    });
+// reddit.getSubreddit(subreddit).getTop(
+//     {limit: num_posts}
+//     )
+//     .then(posts => {
+//         posts.forEach(post => {
+//             console.log(post.title);
+//         });
+//     }).catch(err => {
+//         console.log(err);
+//     });
 
 let scheduledMessage = new cron.CronJob('00 30 10 * * *', () => {
     canalBot.send('Teste de mensagem');
@@ -88,7 +88,7 @@ client.on("messageCreate", (msg) => {
 
 
 //Login com credencial do bot
-client.login(process.env.DISCORD_TOKEN);
+client.login("NjU1ODA2NzUyMDc1NDE1NTcy.GnHKE0.hkyOX7XWlExZLxyBtvfCM0n60UDe7Q7PXEAntE");
 
 //Configurando porta
 var port = process.env.PORT || 3000;
