@@ -44,15 +44,14 @@ client.once('ready', () => {
 //         console.log(err);
 //     });
 
-let scheduledMessage = new cron.CronJob('00 30 10 * * *', () => {
-    canalBot.send('Teste de mensagem');
-});
-
-scheduledMessage.start();
-
-
 const prefix = "!";
 const canalBot = process.env.CANAL_BOT;
+
+let scheduledMessage = new cron.CronJob('@hourly', () => {
+    const channel = client.channels.cache.get(canalBot)
+    channel.send('Teste de mensagem');
+});
+scheduledMessage.start();
 
 client.on("messageCreate", (msg) => {
 
@@ -86,13 +85,11 @@ client.on("messageCreate", (msg) => {
     }
 });
 
-
 //Login com credencial do bot
-client.login(process.env.BOT_TOKEN);
+client.login("NjU1ODA2NzUyMDc1NDE1NTcy.GrOEuv.Aj3ab8fsMplh8qTFHdL_SCVC6EC5H9T7ocGlWk");
 
 //Configurando porta
 var port = process.env.PORT || 3000;
-
 server.listen(port, () => {
     console.log(`Bot esta executando na porta ${port}`);
 });
