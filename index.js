@@ -86,7 +86,7 @@ client.on("messageCreate", (msg) => {
 });
 
 //Login com credencial do bot
-client.login("NjU1ODA2NzUyMDc1NDE1NTcy.GrOEuv.Aj3ab8fsMplh8qTFHdL_SCVC6EC5H9T7ocGlWk");
+client.login(process.env.BOT_TOKEN);
 
 //Configurando porta
 var port = process.env.PORT || 3000;
